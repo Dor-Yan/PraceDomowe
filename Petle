@@ -1,0 +1,206 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace Petle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 1. Napisz program, który sprawdzi ile jest liczb pierwszych w zakresie 0 – 100.
+
+            int w = 0;
+
+            for (int x = 2; x <= 100; x++)
+            {
+                if (x % 2 != 0)
+                {
+                    w++;
+
+                }
+            }
+
+            Console.WriteLine($"W zakresie 0-100 znajduje się {w} liczb pierwszych");
+
+            // 2. Napisz program, w którym za pomocą pętli do…while znajdziesz wszystkie liczby parzyste z 
+            // zakresu 0 – 1000
+
+            int y = 2;
+
+            do
+            {
+                if (y % 2 == 0) Console.WriteLine(y);
+                y++;
+            }
+
+            while (y <= 1000);
+
+            // 3. Napisz program, który zaimplementuje ciąg Fibonacciego i wyświetli go na ekranie.
+
+            int fib = 0;
+            int fib1 = 1;
+            int fib2 = 0;
+
+            Console.WriteLine(fib);
+            Console.WriteLine(fib1);
+
+            for (int i = 0; i < 20; i++)
+            {
+                fib2 = fib + fib1;
+
+                fib = fib1;
+                fib1 = fib2;
+                Console.WriteLine(fib2);
+            }
+
+            // 4. Napisz program, który po podaniu liczby całkowitej wyświetli piramidę liczb od 1 do podanej 
+            // liczby w formie jak poniżej
+
+            int num = int.Parse(Console.ReadLine());
+            int np = 1;
+            int current = 1;
+            while (current <= num)
+            {
+                for (int idx = 0; idx < np && current <= num; idx++)
+                {
+                    while (current <= num)
+                    {
+                        Console.Write($"{current++} ");
+                        break;
+                    }
+                }
+
+
+                Console.WriteLine();
+                np++;
+
+            }
+
+            // 5. Napisz program, który dla liczb od 1 do 20 wyświetli na ekranie ich 3 potęgę.
+
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(Math.Pow(i, 3));
+            }
+
+            // 7.Napisz program, który dla liczby zadanej przez użytkownika narysuje diament o krótszej
+            // przekątnej o długości wprowadzonej przez użytkownika i wg wzoru:
+
+            int star = int.Parse(Console.ReadLine());
+            int st = 1;
+
+            int st2 = 0;
+            int st3 = 0;
+            while (st <= star)
+            {
+
+                for (int idy = star; idy >= st2; idy--)
+                {
+                    Console.Write(" ");
+                }
+                st2 = st2 + 2;
+
+                for (int idx = 0; idx < st; idx++)
+                {
+
+                    Console.Write("* ");
+
+                }
+
+                Console.WriteLine();
+                Console.WriteLine();
+                st = st + 2;
+            }
+
+            while (st3 <= star)
+            {
+
+                for (int idy = star - 2; idy <= st2; idy++)
+                {
+                    Console.Write(" ");
+                }
+                st2 = st2 + 2;
+
+                for (int idx = star - 2; idx > st3; idx--)
+                {
+
+                    Console.Write("* ");
+
+                }
+
+                Console.WriteLine();
+                Console.WriteLine();
+                st3 = st3 + 2;
+            }
+
+            // 8.Napisz program, który odwróci wprowadzony przez użytkownika ciąg znaków.Np.
+            //Testowe dane
+
+
+            string s = Console.ReadLine();
+
+            char[] tabString;
+
+            tabString = s.ToArray();
+
+            Array.Reverse(tabString);
+
+            foreach (var item in tabString)
+            {
+                Console.Write(item);
+            }
+
+            // 9. Napisz program, który zamieni liczbę dziesiętną na liczbę binarną.
+
+            int dec = int.Parse(Console.ReadLine());
+            double dbl = 0;
+            double bin = 0;
+            List<double> list = new List<double>();
+
+            for (int j = 0; dbl <= dec; j++)
+            {
+                dbl = Math.Pow(2, j);
+                list.Add(Math.Pow(2, j));
+            }
+
+            List<double> reverse = Enumerable.Reverse(list).ToList();
+
+            foreach (var item in reverse)
+            {
+                bin += item;
+
+                if (bin > dec)
+                {
+                    Console.Write(0);
+                    bin -= item;
+                }
+
+                else if (item <= dec)
+                {
+                    Console.Write(1);
+                }
+            }
+
+            // 10. Napisz program, który znajdzie najmniejszą wspólną wielokrotność dla zadanych 2 liczb
+
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int wynik = 0;
+
+            for (int j = 1; ; j++)
+
+            {
+                if (j % a == 0 && j % b == 0)
+                {
+                    wynik = j;
+                    Console.WriteLine(j);
+                    break;
+                }
+
+            }
+
+
+        }
+    }
+}
