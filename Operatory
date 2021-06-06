@@ -1,0 +1,225 @@
+using System;
+
+namespace PracaDomowa_Operatory
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1.Napisz program w C#, który stworzy dwie zmienne int i sprawdzi czy są 
+            // one równe czy nie.
+
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+
+            if (a == b)
+                Console.WriteLine($"{a} i {b} są równe");
+            else
+                Console.WriteLine($"{a} i {b} nie są równe");
+
+            // 2. Napisz program w C#, który sprawdzi czy podana przez użytkownika liczba 
+            // jest parzysta czy nieparzysta.
+
+            int x = int.Parse(Console.ReadLine());
+
+            if (x % 2 != 0)
+                Console.WriteLine($"{x} jest liczbą nieparzystą");
+            else
+                Console.WriteLine($"{x} jest liczbą parzystą");
+
+            // 3. Napisz program w C#, który sprawdzi czy podana przez użytkownika liczba 
+            // jest dodatnia czy ujemna.
+
+            int y = int.Parse(Console.ReadLine());
+
+            if (y > 0)
+                Console.WriteLine($"{y} jest liczbą dodatnią");
+            else
+                Console.WriteLine($"{y} jest liczbą ujemną");
+
+            // 4. Napisz program w C#, który sprawdzi czy podany przez użytkownika rok 
+            // jest rokiem przestępnym.
+
+            int z = int.Parse(Console.ReadLine());
+
+            if (z % 4 == 0)
+                Console.WriteLine($"{z} jest rokiem przestępnym");
+            else
+                Console.WriteLine($"{z} nie jest rokiem przestępnym");
+
+            // 5. Napisz program w C#, który sprawdzi czy podany przez użytkownika wiek 
+            // uprawnia go do ubiegania się o stanowisko posła, premiera, sentarora,
+            // prezydenta.
+
+            int w = int.Parse(Console.ReadLine());
+
+            if (w >= 35)
+                Console.WriteLine("Możesz zostać posłem, senatorem albo nawet prezydentem");
+            else if (w >= 30 && w < 35)
+                Console.WriteLine("Możesz zostać posłem lub senatorem");
+            else if (w >= 21 && w < 30)
+                Console.WriteLine("Możesz zostać posłem");
+            else
+                Console.WriteLine("Zastanów się czy polityka to dobry kierunek");
+
+            // 6.Napisz program w C#, który pobierze wzrost użytkownika i przypisze mu 
+            // wymyśloną kategorię wzrostu.
+
+            int growth = int.Parse(Console.ReadLine());
+
+            if (growth < 140)
+                Console.WriteLine("Jesteś niziołkiem");
+            else if (growth >= 140 && growth < 160)
+                Console.WriteLine("Jesteś krasnoludem");
+            else if (growth >= 160 && growth < 200)
+                Console.WriteLine("Jesteś zwyczajnym człowiekiem");
+            else if (growth >= 200)
+                Console.WriteLine("Jesteś wielkoludem!");
+
+            // 7. Napisz program w C#, który pobierze 3 liczby od użytkownika i sprawdzi, 
+            // która jest największa
+
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            int n3 = int.Parse(Console.ReadLine());
+
+            if ((n1 > n2) && (n1 > n3))
+                Console.WriteLine($"{n1} jest największa z podanych");
+            else if ((n2 > n1) && (n2 > n3))
+                Console.WriteLine($"{n2} jest największa z podanych");
+            else if ((n3 > n2) && (n3 > n1))
+                Console.WriteLine($"{n3} jest największa z podanych");
+
+            // 8. Napisz program, który sprawdzi, czy kandydat może ubiegać się o miejsce 
+            // na studiach wg.Następujących kryteriów:
+
+            int math = int.Parse(Console.ReadLine());
+            int physic = int.Parse(Console.ReadLine());
+            int chemistry = int.Parse(Console.ReadLine());
+
+            if ((math > 70 && physic > 55 && chemistry > 45) || (math + physic > 150) || (math + chemistry > 150))
+                Console.WriteLine("Kandydat dopuszczony do rekrutacji");
+            else
+                Console.WriteLine("Trzeba było się uczyć!");
+
+            // 9. Napisz program, który odczyta temperaturę I zwróci nazwę jak w 
+            // poniższych kryteriach
+
+            int temp = int.Parse(Console.ReadLine());
+
+            if (temp < 0) Console.WriteLine("cholernie piździ");
+            else if (temp >= 0 && temp < 10) Console.WriteLine("zimno");
+            else if (temp >= 10 && temp < 20) Console.WriteLine("chłodno");
+            else if (temp >= 20 && temp < 30) Console.WriteLine("w sam raz");
+            else if (temp >= 30 && temp < 40) Console.WriteLine("zaczyna być słabo, bo gorąco");
+            else if (temp >= 40) Console.WriteLine("a weź wyprowadzam się na Alaskę");
+
+            // 10. Napisz program, który sprawdzi, czy z 3 podanych długości można 
+            // stworzyć trójkąt
+
+            int t1 = int.Parse(Console.ReadLine());
+            int t2 = int.Parse(Console.ReadLine());
+            int t3 = int.Parse(Console.ReadLine());
+
+            if (t1 + t2 > t3 && t2 + t3 > t1 && t3 + t1 > t2) Console.WriteLine("Można zbudować trójkąt");
+            else Console.WriteLine("Nie można zbudować trójkąta");
+
+            // 11. Napisz program, który zmieni ocenę ucznia na jej opis wg podanej tabeli:
+
+            int ocena = int.Parse(Console.ReadLine());
+
+            switch (ocena)
+            {
+                case 1:
+                    Console.WriteLine("Niedostateczny");
+                    break;
+                case 2:
+                    Console.WriteLine("Dopuszczający");
+                    break;
+                case 3:
+                    Console.WriteLine("Dostateczny");
+                    break;
+                case 4:
+                    Console.WriteLine("Dobry");
+                    break;
+                case 5:
+                    Console.WriteLine("Bardzo dobry");
+                    break;
+                case 6:
+                    Console.WriteLine("Celujący");
+                    break;
+            }
+
+            // 12. Napisz program, który pobierze numer dnia tygodnia i wyświetli jego 
+            // nazwę
+
+            int day = int.Parse(Console.ReadLine());
+
+            switch (day)
+            {
+                case 1:
+                    Console.WriteLine("Poniedziałek");
+                    break;
+                case 2:
+                    Console.WriteLine("Wtorek");
+                    break;
+                case 3:
+                    Console.WriteLine("Środa");
+                    break;
+                case 4:
+                    Console.WriteLine("Czwartek");
+                    break;
+                case 5:
+                    Console.WriteLine("Piątek");
+                    break;
+                case 6:
+                    Console.WriteLine("Sobota");
+                    break;
+                case 7:
+                    Console.WriteLine("Niedziela");
+                    break;
+            }
+
+            // 13.Napisz program, który będzie posiadał proste menu(wg.Wzoru poniżej) I
+            // będzie prostym kalkulatorem
+
+            Console.WriteLine("Podaj pierwszą liczbę");
+            int number1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Podaj drugą liczbę");
+            int number2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("1. Dodawanie");
+            Console.WriteLine("2. Odejmowanie");
+            Console.WriteLine("3. Mnożenie");
+            Console.WriteLine("4. Dzielenie");
+
+            Console.WriteLine("Podaj numer operacji do wykonania");
+            int operation = int.Parse(Console.ReadLine());
+
+            int result = 0;
+
+           switch (operation)
+            {
+                case 1:
+                    result = number1 + number2;
+                    break;
+                case 2:
+                    result = number1 - number2;
+                    break;
+                case 3:
+                    result = number1 * number2;
+                    break;
+                case 4:
+                    result = number1 / number2;
+                    break;
+                default:
+                    Console.WriteLine("Błędny wybór");
+                    break;
+            }
+
+            Console.WriteLine($"Twój wynik to: {result}");
+
+        }
+    }
+}
