@@ -1,0 +1,78 @@
+using System;
+
+namespace TypyDanych_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // 1. Stwórz program, w którym zadeklarujesz zmienne dotyczące danych pracownika firmy.
+
+            string name = "Dorian";
+            string surname = "Margraf";
+            int age = 38;
+            char sex = 'k';
+            long pesel = 82090712345;
+            int phone = 501123456;
+
+            // 2. Napisz program, w którym stworzysz 3 zmienne z jedną literą, a następnie wypiszesz je w 
+            //odwrotnej kolejności niż zostały zadeklarowane...
+
+            char one = 'a';
+            char two = 'b';
+            char three = 'c';
+
+            Console.WriteLine($"{three} {two} {one}");
+
+           // 3.Napisz program, który na podstawie podanej szerokości i długości prostokąta wyliczy długość
+           // przekątnej. 
+
+            double a = 4;
+            double b = 5;
+
+            Console.WriteLine(Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b,2)));
+
+            // 4. Napisz program w którym stworzysz 2 zmienne liczbowe, oraz jedną tekstową...
+
+            int x = 10;
+            string y = "Szkoła Dotneta";
+            double z = 12.5;
+
+            // Napisz program w którym poprosisz użytkownika o jego dane personalne...
+
+
+            Console.WriteLine("Podaj imię:");
+            string imie = Console.ReadLine();
+          
+            Console.WriteLine("Podaj nazwisko:");
+            string nazwisko = Console.ReadLine();
+            
+            Console.WriteLine("Podaj nr telefonu:");
+            string telefon = Console.ReadLine();
+            int.Parse(telefon);
+
+            Console.WriteLine("Podaj adres email:");
+            string mail = Console.ReadLine();
+
+            Console.WriteLine("Podaj wzrost w cm:");
+            string wzrost = Console.ReadLine();
+            int.Parse(wzrost);
+
+            Console.WriteLine("Podaj wagę w kg:");
+            string waga = Console.ReadLine();
+            double.Parse(waga);
+
+            Console.WriteLine("\r\n");
+            Console.WriteLine("Twoje dane:");
+            Console.Write($"Imię: {imie} \r\n" +
+                $"Nazwisko: {nazwisko} \r\n" +
+                $"nr telefonu: {telefon} \r\n" +
+                $"adres email {mail} \r\n" +
+                $"wzrost {wzrost} cm \r\n" +
+                $"waga {waga} kg");
+        }
+
+
+    }
+}
